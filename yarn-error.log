@@ -1,0 +1,36 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add gulp gulp-plumber gulp-postcss gulp-rename gul-sass cssnano del gulp-eslint autoprefixer extend
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;c:\program files\graphicsmagick-1.3.30-q16;C:\Program Files\ImageMagick-7.0.8-Q16;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;C:\Program Files\MATLAB\R2019a\bin;C:\Program Files\MATLAB\R2018a\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\xampp\php;C:\composer;C:\Program Files\Microsoft VS Code\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Apache\maven\bin;C:\Python27\Scripts;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\openssl\bin;C:\Users\LeeAllers\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\LeeAllers\AppData\Local\Programs\Python\Python38\;C:\Users\LeeAllers\AppData\Local\Microsoft\WindowsApps;C:\Users\LeeAllers\AppData\Roaming\Composer\vendor\bin;C:\Users\LeeAllers\AppData\Local\GitHubDesktop\bin;C:\xampp\mysql\bin;C:\Users\LeeAllers\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\LeeAllers\AppData\Roaming\Composer\vendor\drush\drush;C:\Users\LeeAllers\AppData\Local\Yarn\bin;C:\Program Files\balena-cli\bin;C:\Users\LeeAllers\AppData\Roaming\npm;C:\Users\LeeAllers\AppData\Roaming\Python\Python38\Scripts
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.16.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/gul-sass: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:65200:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:129590:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:130562:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:130484:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1145:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

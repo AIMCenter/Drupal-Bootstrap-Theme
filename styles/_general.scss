@@ -1,0 +1,58 @@
+
+body {
+  overflow-x: hidden;
+}
+em {
+  &.placeholder {
+    color: $brand-primary;
+  }
+}
+a {
+  @include link-button-options($brand-primary);
+}
+
+.text {
+  @include make-colors("primary", $brand-primary);
+  @include make-colors("secondary", $brand-secondary);
+  &-white {
+    color: #fff;
+  }
+  &-black {
+    color: #3b3b3b;
+  }
+}
+.bg {
+  @include make-colors("primary", $brand-primary);
+  @include make-colors("secondary", $brand-secondary);
+  &-white {
+    color: #fff;
+  }
+  &-black {
+    color: #3b3b3b;
+  }
+}
+@each $name, $color in $theme-colors {
+  .callout-#{$name} {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #eee;
+    border-left-width: 0.25rem;
+    border-radius: 0.25rem;
+    border-left-color: $color;
+  }
+}
+
+.shadow {
+  box-shadow: $shadow-default;
+}
+
+.sticky-in-position {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+}
+
+.tabledrag-toggle-weight-wrapper {
+  @extend .btn;
+}

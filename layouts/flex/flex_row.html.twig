@@ -1,0 +1,6 @@
+{% if content.main %}
+	{% set classes = [] %}
+	<div {{attributes.addClass('d-flex')}}>
+		<div {{region_attributes.main.addClass(classes)}}>{{content.main}}</div>
+	</div>
+{% endif %}

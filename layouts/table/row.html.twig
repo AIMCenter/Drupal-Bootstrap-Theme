@@ -1,0 +1,12 @@
+<table>
+	{% for item in row_items %}
+		{% if loop.index0 == 0 %}
+			Test
+			<tr>{{item }}</tr>
+		{% else %}
+			Test
+			<td>{{item }}</td>
+		{% endif %}
+
+	{% endfor %}
+</table>

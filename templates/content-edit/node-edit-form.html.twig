@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Theme override for a node edit form.
+ *
+ * Two column template for the node add/edit form.
+ *
+ * This template will be used when a node edit form specifies 'node_edit_form'
+ * as its #theme callback.  Otherwise, by default, node add/edit forms will be
+ * themed by form.html.twig.
+ *
+ * Available variables:
+ * - form: The node add/edit form.
+ *
+ * @see seven_form_node_form_alter()
+ */
+#}
+{{ attach_library('aimx/admin.edit-form') }}
+<div class="content clearfix row">
+	<div class="col-md-8 layout-region layout-region-node-main">
+		<div class="node-edit-form-content shadow py-2 px-4 rounded">
+			{{ form|without('advanced', 'actions') }}
+		</div>
+	</div>
+	<div class="col-md-4 layout-region-node-secondary">
+		<div class="sticky-in-position">
+			{{ form.advanced }}
+		</div>
+	</div>
+	<div class="col layout-region-node-footer">
+		{{ form.actions }}
+	</div>
+</div>

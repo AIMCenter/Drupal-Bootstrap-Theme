@@ -1,0 +1,29 @@
+#navbar-top,
+#navbar-main {
+  background-color: $brand-primary;
+  .nav-link {
+    @include border-radius;
+    @include button-variant-inverse(
+      $brand-primary,
+      $brand-primary,
+      $white,
+      $white,
+      $white,
+      $white
+    );
+    &.is-active {
+      @include button-variant(white, white);
+    }
+  }
+
+  .navbar-toggler {
+    @include border-radius;
+    @include button-variant-inverse($white, $white);
+    color: $brand-primary;
+    &:hover {
+      color: darken($brand-primary, 7.5%);
+    }
+  }
+}
+.navbar-main {
+}

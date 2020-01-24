@@ -1,0 +1,33 @@
+--- # --------------
+# Library
+aimx_library: "production"
+# Layout
+# --------------
+aimx_sidebar_position: "both"
+aimx_content_offset: 0
+aimx_sidebar_first_width: 4
+aimx_sidebar_first_offset: 0
+aimx_sidebar_second_width: 3
+aimx_sidebar_second_offset: 0
+
+# Container
+# --------------
+aimx_fluid_container: 0
+
+# Buttons
+# --------------
+aimx_button: 1
+aimx_button_size: ""
+aimx_button_outline: 0
+
+# Navbar
+# --------------
+aimx_navbar_toggle: 1
+aimx_navbar_container: "navbar-toggleable-md"
+aimx_navbar_top_position: ""
+aimx_navbar_top_color: "navbar-dark"
+aimx_navbar_position: ""
+aimx_navbar_color: "navbar-dark"
+# Colors
+# --------------
+aimx_table_hover: 1

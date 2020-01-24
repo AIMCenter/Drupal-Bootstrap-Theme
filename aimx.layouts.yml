@@ -1,0 +1,49 @@
+table_row:
+  label: "Table Row (x)"
+  category: "AIM"
+  template: "layouts/table/row"
+  regions:
+    content:
+        label: "Content"
+    attributes:
+      label: Attributes
+aim_events_default_n:
+  label: "Events (n)"
+  category: "AIM"
+  template: "layout/events/events_default_n"
+  default_region: top_main
+  regions:
+    header:
+      label: "Header"
+    top_flex:
+      label: "Flex"
+    top_left:
+      label: "Left (md-6)"
+    top_right:
+      label: "Right (md-6)"
+    top_main_flex:
+      label: "Flex"
+    top_main:
+      label: "Main (top)"
+    middle_left:
+      label: "Middle Left (md-6)"
+    middle_right:
+      label: "Middle Right (md-6)"
+    bottom_main_flex:
+      label: "Main (bottom)"
+    bottom_left:
+      label: "Bottom Left (md-6)"
+    bottom_right:
+      label: "Bottom Right (md-6)"
+    bottom_flex:
+      label: "Flex"
+  icon_map:
+    - [top]
+    - [top_flex]
+    - [top_left, top_right]
+    - [top_main_flex]
+    - [top_main]
+    - [middle_left, middle_right]
+    - [bottom_main_flex]
+    - [bottom_left, bottom_right]
+    - [bottom_flex]

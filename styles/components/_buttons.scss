@@ -1,0 +1,26 @@
+.btn {
+  &-primary {
+    @include make-btn($brand-primary, $white);
+  }
+}
+
+.show {
+  > .btn- {
+    &primary {
+      &.dropdown-toggle {
+        background-color: darken(#007a86, 10%);
+        border-color: darken(#007a86, 10%);
+
+        &:focus {
+          box-shadow: 0 0 0 0.2rem rgba(0, 122, 134, 0.5);
+        }
+      }
+    }
+  }
+}
+
+//.views-displays .tabs.secondary li a {
+//  &.active {
+//    color: black;
+//  }
+//}

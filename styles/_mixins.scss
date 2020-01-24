@@ -1,0 +1,224 @@
+@mixin make-colors($string, $color) {
+  &-#{$string} {
+    color: $color;
+    &-light {
+      color: lighten($color, 5%);
+    }
+    &-xlight {
+      color: lighten($color, 15%);
+    }
+    &-dark {
+      color: darken($color, 10%);
+    }
+    &-xdark {
+      color: darken($color, 15%);
+    }
+  }
+}
+
+@mixin make-btn($color1, $color2) {
+  color: $color2;
+  background-color: $color1;
+  &:focus {
+    color: $color2;
+    box-shadow: 0 0 0 0.2rem rgba($color1, 0.5);
+  }
+  &:active:not(:disabled):not(.disabled) {
+    box-shadow: 0 0 0 0.2rem rgba($color1, 0.5);
+    background-color: darken($color1, 10%);
+    border-color: darken($color1, 10%);
+  }
+  outline-color: lighten($color1, 10%);
+}
+
+@mixin make-callout($string, $color1, $color2: white) {
+  &-#{$string} {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #eee;
+    border-left-width: 0.25rem;
+    border-radius: 0.25rem;
+    border-left-color: $color1;
+  }
+}
+
+@mixin link-button-options($color: #000) {
+  color: $color;
+  &:hover,
+  :active,
+  .active {
+    color: darken($color, 10%);
+  }
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+/*
+ANIMATIONS USAGE
+
+@include keyframes(slide-down) {
+  0% { opacity: 1; }
+  90% { opacity: 0; }
+}
+
+.element {
+  width: 100px;
+  height: 100px;
+  background: black;
+  @include animation('slide-down 5s 3');
+}
+
+*/
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+/*
+TRANSITIONS USAGE
+
+a {
+  color: gray;
+  @include transition(color .3s ease);
+  &:hover {
+    color: black;
+  }
+}
+*/
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin button-variant-inverse(
+  $background,
+  $border,
+  $hover-background: darken($background, 7.5%),
+  $hover-border: darken($border, 10%),
+  $active-background: darken($background, 10%),
+  $active-border: darken($border, 12.5%)
+) {
+  color: color-yiq($background);
+
+  border-color: $border;
+
+  @include hover() {
+    color: color-yiq($hover-background);
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+  }
+
+  &:focus,
+  &.focus {
+    color: color-yiq($hover-background);
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $btn-box-shadow,
+        0
+          0
+          0
+          $btn-focus-width
+          rgba(mix(color-yiq($background), $border, 15%), 0.5);
+    } @else {
+      box-shadow: 0
+        0
+        0
+        $btn-focus-width
+        rgba(mix(color-yiq($background), $border, 15%), 0.5);
+    }
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    color: color-yiq($background);
+    background-color: $background;
+    border-color: $border;
+    // Remove CSS gradients if they're enabled
+    @if $enable-gradients {
+      background-image: none;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: color-yiq($active-background);
+    background-color: $active-background;
+    @if $enable-gradients {
+      background-image: none; // Remove the gradient for the pressed/active state
+    }
+    border-color: $active-border;
+
+    &:focus {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        box-shadow: $btn-active-box-shadow,
+          0
+            0
+            0
+            $btn-focus-width
+            rgba(mix(color-yiq($background), $border, 15%), 0.5);
+      } @else {
+        box-shadow: 0
+          0
+          0
+          $btn-focus-width
+          rgba(mix(color-yiq($background), $border, 15%), 0.5);
+      }
+    }
+  }
+}

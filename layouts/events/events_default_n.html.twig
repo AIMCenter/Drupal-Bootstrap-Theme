@@ -1,0 +1,76 @@
+{% set classes_row = [
+    'row'
+] %}
+{% set classes_col = [
+    'col col-md-6'
+] %}
+{% set classes_flex = [
+    'd-flex'
+] %}
+<div {{attributes}}>
+	{% if content.header %}
+		<div {{ region_attributes.header.addClass(classes_row) }}>
+			<div class="col">{{content.header}}</div>
+		</div>
+	{% endif %}
+	{% if content.top_flex %}
+		<div {{ region_attributes.top_flex.addClass(classes_flex) }}>
+			{{ content.top_flex }}
+		</div>
+	{% endif %}
+	{% if content.top_left or content.top_right %}
+		<div class="{{ classes_row|join(' ') }}">
+			{% if content.top_left %}
+				<div {{ region_attributes.top_left.addClass(classes_col).addClass('order-2 order-md-1') }}>{{ content.top_left }}</div>
+			{% endif %}
+			{% if content.top_right %}
+				<div {{ region_attributes.top_right.addClass(classes_col).addClass('order-2 order-md-1') }}>{{ content.top_right }}</div>
+			{% endif %}
+		</div>
+	{% endif %}
+	{% if content.top_main_flex %}
+		<div {{ region_attributes.top_main_flex.addClass(classes_flex) }}>
+			{{ content.top_main_flex }}
+		</div>
+	{% endif %}
+	{% if content.top_main %}
+		<div {{ region_attributes.top_main.addClass(classes_row) }}>
+			<div class="col">{{content.top_main}}</div>
+		</div>
+	{% endif %}
+	{% if content.middle_left or content.middle_right %}
+		<div class="{{ classes_row|join(' ') }}">
+			{% if content.middle_left %}
+				<div {{ region_attributes.middle_left.addClass(classes_col) }}>{{ content.middle_left }}</div>
+			{% endif %}
+			{% if content.middle_right %}
+				<div {{ region_attributes.middle_right.addClass(classes_col) }}>{{ content.middle_right }}</div>
+			{% endif %}
+		</div>
+	{% endif %}
+	{% if content.bottom_main_flex %}
+		<div {{ region_attributes.bottom_main_flex.addClass(classes_flex) }}>
+			{{ content.bottom_main_flex }}
+		</div>
+	{% endif %}
+	{% if content.bottom_main %}
+		<div {{ region_attributes.bottom_main.addClass(classes_row) }}>
+			<div class="col">{{content.bottom_main}}</div>
+		</div>
+	{% endif %}
+	{% if content.bottom_left or content.bottom_right %}
+		<div class="{{ classes_row|join(' ') }}">
+			{% if content.bottom_left %}
+				<div {{ region_attributes.bottom_left.addClass(classes_col) }}>{{ content.bottom_left }}</div>
+			{% endif %}
+			{% if content.bottom_right %}
+				<div {{ region_attributes.bottom_right.addClass(classes_col) }}>{{ content.bottom_right }}</div>
+			{% endif %}
+		</div>
+	{% endif %}
+	{% if content.bottom_flex %}
+		<div {{ region_attributes.bottom_flex.addClass(classes_flex) }}>
+			{{ content.bottom_flex }}
+		</div>
+	{% endif %}
+</div>

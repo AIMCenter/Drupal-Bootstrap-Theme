@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a generic views UI container/wrapper.
+ *
+ * Available variables:
+ * - attributes: HTML attributes to apply to the container element.
+ * - children: The remaining elements such as dropbuttons and tabs.
+ *
+ * @ingroup themeable
+ */
+#}
+{{attach_library('aimx/admin.views.fix')}}
+
+<div{{attributes}}>{{ children }}</div>

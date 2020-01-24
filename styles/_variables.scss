@@ -1,0 +1,67 @@
+$brand-cherry: #ba0c2f;
+$brand-turquoise: #007a86;
+$brand-dusk: #8a387c;
+$brand-gray: #63666a;
+$brand-silver: #a7a8aa;
+$brand-noon: #ffc600;
+$brand-sunset: #ed8b00;
+$brand-mesa: #d6a461;
+$brand-terra: #c05131;
+$brand-chile: #a8aa19;
+$white: #fff;
+$dark: #3b3b3b;
+
+$color-dark: #3b3b3b;
+$color-light: #fff;
+$shadow-color-default: rgba(0, 0, 0, 0.15);
+$shadow-default: 0 1px 5px $shadow-color-default;
+
+$brand-primary: $brand-turquoise;
+$brand-primary-dark: darken($brand-primary, 10%);
+$brand-primary-xdark: darken($brand-primary, 30%);
+$brand-primary-light: lighten($brand-primary, 10%);
+$brand-primary-xlight: lighten($brand-primary, 30%);
+
+$brand-secondary: $brand-cherry;
+$brand-secondary-dark: darken($brand-secondary, 10%);
+$brand-secondary-xdark: darken($brand-secondary, 30%);
+$brand-secondary-light: lighten($brand-secondary, 10%);
+$brand-secondary-xlight: lighten($brand-secondary, 30%);
+$colors: (
+  "cherry": $brand-cherry,
+  "turquoise": $brand-turquoise,
+  "dusk": $brand-dusk,
+  "gray": $brand-gray,
+  "silver": $brand-silver,
+  "noon": $brand-noon,
+  "sunset": $brand-sunset,
+  "mesa": $brand-mesa,
+  "terra": $brand-terra,
+  "chile": $brand-chile
+);
+$theme-colors: (
+  "primary": $brand-primary,
+  "secondary": $brand-secondary,
+  "dusk": $brand-dusk,
+  "gray": $brand-gray,
+  "silver": $brand-silver,
+  "noon": $brand-noon,
+  "sunset": $brand-sunset,
+  "mesa": $brand-mesa,
+  "terra": $brand-terra,
+  "chile": $brand-chile
+);
+
+$enable-caret: true !default;
+$enable-rounded: true !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$enable-transitions: true !default;
+$enable-prefers-reduced-motion-media-query: true !default;
+$enable-hover-media-query: false !default; // Deprecated, no longer affects any compiled CSS
+$enable-grid-classes: true !default;
+$enable-pointer-cursor-for-buttons: true !default;
+$enable-print-styles: true !default;
+$enable-responsive-font-sizes: true !default;
+$enable-validation-icons: true !default;
+$enable-deprecation-messages: true !default;

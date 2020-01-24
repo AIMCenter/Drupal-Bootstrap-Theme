@@ -1,0 +1,18 @@
+// AIM Variables
+@import "./variables.scss";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+// AIM mixins
+@import "./mixins.scss";
+
+//Get bootstrap stuff
+// Required
+
+// AIM Components
+@import "./components/base";
+
+//Theme
+@import "./theme/base.scss";
+
+//AIM Componentimportant
+@import "./general.scss";
